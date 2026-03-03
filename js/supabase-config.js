@@ -1,11 +1,16 @@
-// js/supabaseClient.js
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Agregamos las comillas que faltaban
+const supabaseUrl = "https://hthogdhqyekkxyciisth.supabase.co";
+const supabaseKey = "sb_publishable_OM58HzTD8HVdMPyJ0y_JXA_mB68BVLg";
 
-// Creamos el cliente y lo asignamos a 'db' para evitar conflictos de nombres
-const client = window.supabase.createClient(supabaseUrl, supabaseKey);
+// Verificamos si la librería de Supabase ya cargó
+if (window.supabase) {
+    const client = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-// Esta línea es la más importante para que productos.js funcione:
-window.db = client; 
+    // Lo asignamos a 'db' para que tus otros archivos lo reconozcan
+    window.db = client; 
+    window.supabaseClient = client; // Alias extra por seguridad
 
-console.log("Conexión con Supabase establecida bajo el alias 'db'");
+    console.log("✅ Conexión con Supabase establecida bajo el alias 'db'");
+} else {
+    console.error("❌ Error: La librería de Supabase no se detectó. Revisa el orden de tus scripts.");
+}
