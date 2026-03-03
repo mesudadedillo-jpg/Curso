@@ -1,0 +1,167 @@
+/* --- Variables de Color y Estilo --- */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --border-color: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* --- Reset General --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* --- Contenedor de Login (index.html) --- */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#auth-form {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+/* --- Inputs y Botones --- */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+#btnLogin {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#btnLogin:hover {
+  background-color: var(--primary-hover);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.secondary:hover {
+  background-color: #eff6ff;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+  width: auto; /* Para que en el navbar no ocupe todo el ancho */
+  padding: 8px 16px;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+/* --- Navbar (Admin y Cliente) --- */
+.navbar {
+  background-color: var(--card-bg);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  margin-bottom: 2rem;
+}
+
+/* --- Tablas y Listas --- */
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.table-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+/* --- Estilos para items de lista del cliente --- */
+.data-item {
+  background: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  list-style: none;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
